@@ -10,21 +10,29 @@ let isEasy = false; //Game mode, 3 boxes if true 6 boxes if false
 
 let chosenBox = document.getElementById(chosenBoxId());//This will be the box that has the correct color every page load and every time Easy, New Game or Hard is pressed 
 
-let pageHeader = document.querySelector("header");
-
-let easy = document.getElementById("easy");
-
-let hard = document.getElementById("hard");
-
+let pageHeader = document.querySelector("header");//Header block that contains the h1
+let easy = document.getElementById("easy");//Easy button
+let hard = document.getElementById("hard");//Hard button
 let reset = document.getElementById("reset"); //New Game or Play Again display 
+let message = document.getElementById("message");//The message span that says 'Try Again' or 'Correct'
 
-let message = document.getElementById("message");
+initialize();
 
-//Generate new color code every page load
-generateColorCode();
-//Generate box colors every page load where one box has the color indicated in the rgb display and only the included boxes are shown
-colorTheBoxes();
+//0. Function that will initialize everything when page loads:
 
+function initialize(){
+    generateColorCode(); //Generate RGB code to be guessed
+    colorTheBoxes(); //Generate colors on included boxes
+    //Adding event listeners:
+    for(let box of boxes){ //Add event listeners to each box
+        box.addEventListener("click",isRightBox);
+        box.addEventListener("mouseenter",onHoverBox);
+        box.addEventListener("mouseleave",onHoverBox);
+    }
+    easy.addEventListener("click",toggleEasy); //Add event listeners to each nav buttons
+    hard.addEventListener("click",toggleEasy); //Add event listeners to each nav buttons
+    reset.addEventListener("click",resetGame); //Add event listeners to each nav buttons
+}
 
 //1. Function to generate new RGB Code:
 
@@ -126,17 +134,3 @@ function onHoverBox(e){
         else if(e.type == "mouseleave") this.classList.remove("hoverBox");            
     }
 }
-
-//Adding event listeners:
-
-for(let box of boxes){
-    box.addEventListener("click",isRightBox);
-    box.addEventListener("mouseenter",onHoverBox);
-    box.addEventListener("mouseleave",onHoverBox);
-}
-
-easy.addEventListener("click",toggleEasy);
-
-hard.addEventListener("click",toggleEasy);
-
-reset.addEventListener("click",resetGame);
