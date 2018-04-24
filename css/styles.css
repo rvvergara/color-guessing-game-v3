@@ -1,0 +1,101 @@
+body{
+	background: #232323;
+	color: white;
+	font-family: 'Cabin', sans-serif;
+	width:100%;
+	margin: 0;
+}
+
+.container{
+	max-width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	height: 100%;
+	min-width: 300px;
+	height:100%;
+}
+
+header{
+	text-align: center;
+	text-shadow: 2px 2px #242424;
+	background:#186c6c;
+}
+
+h1{
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.1;
+	padding: 20px 0;
+}
+
+#colorTextDisplay, small{
+	display: block
+}
+#colorTextDisplay{
+	font-size: 1.75em;
+}
+small{
+	font-size: 0.7em;
+}
+
+nav{
+	background: #dddddd;
+	color: #186c6c;
+	height:30px;
+}
+
+.navItems{
+	display: inline;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	height: 100%;
+}
+
+button{
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 700;
+	transition: all 0.4s;
+}
+
+button:focus{
+	outline:0;
+}
+
+#message{
+	display: inline-block;
+	width:40%;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+article{
+	padding-top: 20px;
+}
+
+.box{
+	width:30%;
+	float:left;
+	margin:1.66%;
+	padding-bottom:30%;
+	border-radius: 10px;
+	transition: all 0.4s;
+}
+
+.highlight, button:hover{
+	color: #dddddd;
+	background: rgb(44, 161, 240);
+}
+
+button:hover, .hoverBox{
+	cursor: pointer;
+}
+
+/* .hoverBox{
+	box-shadow: 3px 3px white;
+} */
